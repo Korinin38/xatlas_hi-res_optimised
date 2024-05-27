@@ -9721,7 +9721,7 @@ private:
 		};
 
 		int prevPositionOffset = ceil(options.usePreviousPositionOffset * maxResolution);
-		Vector2i leftLimit = {
+		const Vector2i leftLimit = {
 				max(0, startPosition.x - prevPositionOffset),
 				max(0, startPosition.y - prevPositionOffset)
 		};
@@ -10057,8 +10057,9 @@ private:
 															offset_x,
 															offset_y,
 															orientation);
-			if (coarse_offset_x > (int)maxResolution - (int)imageChart.width()
-				|| coarse_offset_y > (int)maxResolution - (int)imageChart.height())
+			if (maxResolution > 0 &&
+				(coarse_offset_x > (int)maxResolution - (int)imageChart.width()
+				|| coarse_offset_y > (int)maxResolution - (int)imageChart.height()))
 				return false;
 
 			const bool canBlit = (*atlasBitImages)[coarse_level]->canBlit(imageChart, coarse_offset_x, coarse_offset_y);
