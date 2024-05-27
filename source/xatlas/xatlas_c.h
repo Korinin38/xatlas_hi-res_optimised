@@ -213,6 +213,7 @@ typedef struct
 	bool skipSpeedup;
 	bool gridSpeedup;
 	float usePreviousPositionOffset;
+	bool useOpenMP;
 }
 xatlasPackOptions;
 

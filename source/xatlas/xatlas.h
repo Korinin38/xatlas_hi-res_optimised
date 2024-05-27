@@ -266,6 +266,9 @@ struct PackOptions
 	// faster      slower
 	// less dense  more dense
 	float usePreviousPositionOffset = 0.04f;
+
+	// use OpenMP during packing
+	bool useOpenMP = true;
 };
 
 // Call after ComputeCharts. Can be called multiple times to re-pack charts with different options.

@@ -9751,9 +9751,9 @@ private:
 
 #if XA_OMP_PARALLEL
 #if DEBUG_PLACING_STATISTICS
-#pragma omp parallel firstprivate(local_false_jumps, local_jumps)
+#pragma omp parallel if(options.useOpenMP) firstprivate(local_false_jumps, local_jumps)
 #else
-#pragma omp parallel
+#pragma omp parallel if(options.useOpenMP)
 #endif
 		{
 #else
