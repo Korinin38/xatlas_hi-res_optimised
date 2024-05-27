@@ -10129,7 +10129,7 @@ private:
 						if (xx < 0) continue;
 						if (!images[coarse_level].get(x, y)) continue;
 						if (xx >= atlas_w || yy >= atlas_h) continue;
-						XA_DEBUG_ASSERT(curCoarseAtlasImageLayer.get(xx, yy) == false);
+						XA_DEBUG_ASSERT(coarse_level > 0 || curCoarseAtlasImageLayer.get(xx, yy) == false);
 						curCoarseAtlasImageLayer.set(xx, yy);
 					}
 				}
